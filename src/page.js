@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
-import { useRef } from "react";
+"use client";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Navbar } from "./components/nabvar";
 import Books from "./components/books";
 import Story from "./components/story";
 
-const App = () => {
+const TextParallaxContentExample = () => {
   return (
     <>
       <Navbar />
@@ -133,4 +133,4 @@ const ExampleContent = () => (
   </div>
 );
 
-export default App;
+export default TextParallaxContentExample;
