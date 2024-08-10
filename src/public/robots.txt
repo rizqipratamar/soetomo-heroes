@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+Sitemap: https://ajaib.co.id/sitemap.xml
+Sitemap: https://ajaib.co.id/sitemap.rss
