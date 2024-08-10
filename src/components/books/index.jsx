@@ -6,17 +6,11 @@ const Books = () => {
   return (
     <>
       <div className="flex h-48 flex-col items-center justify-center bg-slate-900">
-        <span className="font-semibold uppercase text-white">
+        <span className="font-semibold uppercase text-white text-4xl">
           Refrensi Buku
-        </span>
-        <span className="mt-2 block rounded-full bg-indigo-600 px-4 py-1 text-center font-medium text-white md:hidden">
-          Note: This is much cooler on desktop 😊
         </span>
       </div>
       <SwapColumnFeatures />
-      <div className="flex h-48 items-center justify-center bg-indigo-600">
-        <span className="font-semibold uppercase text-white">Scroll up</span>
-      </div>
     </>
   );
 };

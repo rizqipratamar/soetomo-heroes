@@ -2,27 +2,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import {
-  SiAtlassian,
-  SiDribbble,
-  SiGrubhub,
-  SiKaggle,
-  SiSlack,
-  SiNike,
-} from "react-icons/si";
-
 const Story = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section className="bg-white py-24 px-4 lg:px-8 grid items-center grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 overflow-hidden">
-      <div className="p-4">
-        <h3 className="text-5xl font-semibold">
+    <section className="bg-white flex w-full justify-center h-screen py-24 px-4 lg:px-8  items-center max-w-4xl mx-auto gap-8 lg:gap-4 overflow-hidden">
+      <div className="p-4 mx-auto w-full">
+        <h3 className="text-3xl font-semibold">
           {testimonials[selected]?.time}
         </h3>
-        <p className="text-slate-500 my-4">
+        <div className="text-slate-500 my-4">
           {testimonials[selected]?.timeframe}
-        </p>
+        </div>
 
         <SelectBtns
           numTracks={testimonials.length}
@@ -30,12 +21,6 @@ const Story = () => {
           selected={selected}
         />
       </div>
-
-      <Cards
-        testimonials={testimonials}
-        setSelected={setSelected}
-        selected={selected}
-      />
     </section>
   );
 };
@@ -81,123 +66,55 @@ const SelectBtns = ({ numTracks, setSelected, selected }) => {
   );
 };
 
-const Cards = ({ testimonials, selected, setSelected }) => {
-  return (
-    <div className="p-4 relative h-[450px] lg:h-[500px] shadow-xl">
-      {testimonials.map((t, i) => {
-        return (
-          <Card
-            {...t}
-            key={i}
-            position={i}
-            selected={selected}
-            setSelected={setSelected}
-          />
-        );
-      })}
-    </div>
-  );
-};
-
-const Card = ({
-  Icon,
-  description,
-  name,
-  title,
-  position,
-  selected,
-  setSelected,
-}) => {
-  const scale = position <= selected ? 1 : 1 + 0.015 * (position - selected);
-  const offset = position <= selected ? 0 : 95 + (position - selected) * 3;
-  const background = position % 2 ? "black" : "white";
-  const color = position % 2 ? "white" : "black";
-
-  return (
-    <motion.div
-      initial={false}
-      style={{
-        zIndex: position,
-        transformOrigin: "left bottom",
-        background,
-        color,
-      }}
-      animate={{
-        x: `${offset}%`,
-        scale,
-      }}
-      whileHover={{
-        translateX: position === selected ? 0 : -3,
-      }}
-      transition={{
-        duration: 0.25,
-        ease: "easeOut",
-      }}
-      onClick={() => setSelected(position)}
-      className="absolute top-0 left-0 w-full min-h-full p-8 lg:p-12 cursor-pointer flex flex-col justify-between"
-    >
-      <Icon className="text-7xl mx-auto" />
-      <p className="text-lg lg:text-xl font-light italic my-8">{description}</p>
-      <div>
-        <span className="block font-semibold text-lg">{name}</span>
-        <span className="block text-sm">{title}</span>
-      </div>
-    </motion.div>
-  );
-};
-
 export default Story;
 
 const testimonials = [
   {
-    Icon: SiNike,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos? Officiis ipsam dolorum magnam assumenda.",
-    name: "Jane Dodson",
-    title: "Marketing Director, Nike",
-    time: "3 Oktober 1920",
+    time: "1920 | Lahir",
     timeframe:
-      "Sutomo, yang lebih dikenal sebagai Bung Tomo, lahir di Surabaya pada 3 Oktober 1920. Ia adalah salah satu tokoh paling penting dalam sejarah perjuangan kemerdekaan Indonesia, terutama dikenal karena perannya dalam Pertempuran Surabaya pada 10 November 1945.",
+      "3 Oktober 1920: Bung Tomo lahir di Surabaya. Ia tumbuh dalam lingkungan keluarga yang memiliki semangat nasionalisme tinggi, yang kemudian membentuknya menjadi seorang pejuang kemerdekaan.",
   },
   {
-    Icon: SiAtlassian,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos? Officiis ipsam dolorum magnam assumenda.",
-    name: "Johnathan Rodriguez",
-    title: "UX Research, Atlassian",
-    time: "1937",
-    timeframe:
-      "Bung Tomo berasal dari keluarga yang cukup berada. Ayahnya bekerja sebagai pegawai di kantor pemerintahan Hindia Belanda, sementara ibunya seorang wanita yang berpendidikan tinggi pada masanya. Bung Tomo sendiri mendapat pendidikan di MULO (Meer Uitgebreid Lager Onderwijs) dan HBS (Hogere Burgerschool), yang merupakan sekolah-sekolah elit pada zaman itu.",
+    time: "1930-an | Pendidikan dan Awal Aktivitas",
+    timeframe: (
+      <span>
+        1937: Bung Tomo mulai bekerja di bidang jurnalistik, sebuah langkah awal
+        yang memperkuat keahliannya dalam berkomunikasi dan mempengaruhi publik.{" "}
+        <br />
+        1938: Bergabung dengan Kepanduan Bangsa Indonesia (KBI), di mana ia
+        mulai terlibat dalam gerakan pemuda nasionalis, memperjuangkan
+        kemerdekaan Indonesia.
+      </span>
+    ),
   },
   {
-    Icon: SiDribbble,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos? Officiis ipsam dolorum magnam assumenda.",
-    name: "Phil Heath",
-    title: "Staff Engineer, Dribbble",
-    time: "1942",
-    timeframe:
-      "Saat pendudukan Jepang, Bung Tomo aktif di Gerakan Pemuda dan organisasi bentukan Jepang lainnya. Namun, setelah proklamasi kemerdekaan Indonesia pada 17 Agustus 1945, Bung Tomo menjadi salah satu tokoh penting dalam upaya mempertahankan kemerdekaan dari Belanda yang ingin kembali berkuasa.",
+    time: "1942 - 1945 |  Masa Pendudukan Jepang",
+    timeframe: `Selama pendudukan Jepang, Bung Tomo aktif dalam organisasi perlawanan dan memainkan peran penting dalam membangkitkan semangat rakyat melalui pidato-pidato yang menggugah.
+Sebagai anggota Barisan Pemberontakan Rakyat Indonesia (BPRI), ia menjadi salah satu figur utama yang menentang penjajahan Jepang dan memperjuangkan kemerdekaan.
+`,
   },
   {
-    Icon: SiGrubhub,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos? Officiis ipsam dolorum magnam assumenda.",
-    name: "Andrea Beck",
-    title: "Marketing Manager, GrubHub",
+    time: "1945 | Proklamasi Kemerdekaan dan Pertempuran Surabaya",
+    timeframe: `17 Agustus 1945: Bung Tomo dengan penuh semangat menyambut proklamasi kemerdekaan Indonesia, melihatnya sebagai hasil perjuangan yang panjang.
+Oktober - November 1945: Dalam Pertempuran Surabaya, ia menjadi simbol perlawanan rakyat melalui pidatonya di Radio Pemberontakan, yang memotivasi rakyat untuk berjuang mati-matian melawan tentara Sekutu.
+`,
   },
   {
-    Icon: SiKaggle,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos? Officiis ipsam dolorum magnam assumenda.",
-    name: "Daniel Henderson",
-    title: "Engineering Manager, Kaggle",
+    time: "1950-an | Aktivitas Politik",
+    timeframe: `Setelah kemerdekaan, Bung Tomo terjun ke dunia politik dan menjadi anggota DPR, di mana ia terus memperjuangkan hak-hak rakyat dan menjaga semangat revolusi.
+Ia juga bergabung dengan Partai Rakyat Indonesia, membawa idealismenya untuk menciptakan pemerintahan yang adil dan demokratis.`,
   },
   {
-    Icon: SiSlack,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos? Officiis ipsam dolorum magnam assumenda.",
-    name: "Anderson Lima",
-    title: "Product Manager, Slack",
+    time: "1970-an | Kritik terhadap Pemerintah",
+    timeframe: `Bung Tomo menjadi kritikus tajam terhadap pemerintahan Orde Baru, tidak ragu untuk menyuarakan pandangannya tentang kebijakan yang dianggapnya menyimpang dari semangat kemerdekaan.
+Sikapnya yang tegas dan kritis membuatnya dihormati sekaligus kontroversial di mata banyak orang.`,
+  },
+  {
+    time: "1981 | Wafat",
+    timeframe: `7 Oktober 1981: Bung Tomo meninggal dunia saat menunaikan ibadah haji, sebuah akhir yang khidmat bagi seorang pejuang yang dikenal religius. 10 November 1981: Ia dimakamkan di Taman Makam Pahlawan, Surabaya, tepat pada peringatan Hari Pahlawan, sebuah penghormatan terakhir untuk kontribusinya yang besar bagi bangsa.`,
+  },
+  {
+    time: "2008 | Gelar Pahlawan Nasional",
+    timeframe: `2008: Bung Tomo dianugerahi gelar Pahlawan Nasional oleh pemerintah Indonesia, sebuah pengakuan atas peran vitalnya dalam mempertahankan kemerdekaan dan melawan penjajahan.`,
   },
 ];
