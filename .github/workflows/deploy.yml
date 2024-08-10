@@ -1,0 +1,36 @@
+name: Deploy Next.js to StorageRaya
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Install rclone
+        run: sudo apt-get install -y rclone
+
+      - name: Configure rclone
+        run: |
+          rclone config create storageraya s3 \
+            provider AWS \
+            access_key_id "${{ secrets.STORAGERAYA_ACCESS_KEY_ID }}" \
+            secret_access_key "${{ secrets.STORAGERAYA_SECRET_ACCESS_KEY }}" \
+            endpoint "https://s3-jak01.storageraya.com" \
+            region "jak01" \
+            acl "public-read"
+
+      - name: Deploy to StorageRaya
+        run: rclone sync out/ storageraya:bungtomo --progress
