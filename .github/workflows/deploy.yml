@@ -1,4 +1,4 @@
-name: Deploy Next.js to StorageRaya
+name: Deploy Vite to StorageRaya
 
 on:
   push:
@@ -33,4 +33,4 @@ jobs:
             acl "public-read"
 
       - name: Deploy to StorageRaya
-        run: rclone sync out/ storageraya:bungtomo --progress
+        run: rclone sync dist/ storageraya:teseheroes --progress
