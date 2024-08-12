@@ -4,37 +4,46 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Navbar } from "./components/nabvar";
 import Books from "./components/books";
 import Story from "./components/story";
+import useSound from "use-sound";
 
+import sound from "./sound/pidato.mp3";
 const App = () => {
+  const [play, { stop }] = useSound(sound);
   return (
     <>
-      <Navbar />
-      <div className="bg-white">
-        <TextParallaxContent
-          imgUrl="hero-1.png"
-          subheading="Mengenal Lebih Dekat Bung Tomo"
-          heading="Api Revolusi Arek Arek Suroboyo!"
-        >
-          <div className="px-3">
-            <Story />
-          </div>
-        </TextParallaxContent>
-        <TextParallaxContent
-          imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          subheading="Quality"
-          heading="Never compromise."
-        >
-          <ExampleContent />
-        </TextParallaxContent>
-        <TextParallaxContent
-          imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          subheading="Modern"
-          heading="Dress for the best."
-        >
-          <ExampleContent />
-        </TextParallaxContent>
-      </div>
-      <Books />
+      <button
+        onMouseEnter={() => play()}
+        onMouseLeave={() => stop()}
+        className="w-screen"
+      >
+        <Navbar />
+        <div className="bg-white">
+          <TextParallaxContent
+            imgUrl="hero-1.png"
+            subheading="Mengenal Lebih Dekat Bung Tomo"
+            heading="Api Revolusi Arek Arek Suroboyo!"
+          >
+            <div className="px-3">
+              <Story />
+            </div>
+          </TextParallaxContent>
+          <TextParallaxContent
+            imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            subheading="Quality"
+            heading="Never compromise."
+          >
+            <ExampleContent />
+          </TextParallaxContent>
+          <TextParallaxContent
+            imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            subheading="Modern"
+            heading="Dress for the best."
+          >
+            <ExampleContent />
+          </TextParallaxContent>
+        </div>
+        <Books />
+      </button>
     </>
   );
 };
