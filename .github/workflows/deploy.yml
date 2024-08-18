@@ -1,4 +1,4 @@
-name: Deploy Vite to StorageRaya
+name: Deploy React Vite to StorageRaya
 
 on:
   push:

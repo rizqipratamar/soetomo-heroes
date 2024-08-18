@@ -1,49 +1,31 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 
-export const Navbar = () => {
-  return <SimpleFloatingNav />;
+export const Navbar = ({ open, setOpen }) => {
+  return <SimpleFloatingNav open={open} setOpen={setOpen} />;
 };
 
-const SimpleFloatingNav = () => {
+const SimpleFloatingNav = ({ open, setOpen }) => {
   return (
-    <nav className="fixed z-50 left-[50%] top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-neutral-700 bg-neutral-900 p-2 text-sm text-neutral-500">
-      <Logo />
-      <NavLink>Tentang</NavLink>
-      <NavLink>Tempat</NavLink>
-      <NavLink>Buku</NavLink>
-      <NavLink>Film</NavLink>
-      <JoinButton />
+    <nav className=" z-50 top-0 flex w-full justify-between px-10 fixed items-center gap-6   opacity-80  border-neutral-800 bg-neutral-900 p-2 text-sm text-neutral-300">
+      <div className="text-xl hidden md:flex">
+        Mengenal Lebih Dekat{" "}
+        <span className="font-extrabold ml-1"> Bung Tomo</span>
+      </div>
+
+      <div className="flex items-center gap-6">
+        <NavLink href="#tentang">Tentang</NavLink>
+        <NavLink href="#tempat">Tempat</NavLink>
+        <NavLink href="#buku">Buku</NavLink>
+        <JoinButton open={open} setOpen={setOpen} />
+      </div>
     </nav>
   );
 };
 
-const Logo = () => {
-  // Temp logo from https://logoipsum.com/
+const NavLink = ({ children, href }) => {
   return (
-    <svg
-      width="24"
-      height="auto"
-      viewBox="0 0 50 39"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="ml-2 fill-neutral-50"
-    >
-      <path
-        d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-        stopColor="#000000"
-      ></path>
-      <path
-        d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
-        stopColor="#000000"
-      ></path>
-    </svg>
-  );
-};
-
-const NavLink = ({ children }) => {
-  return (
-    <a href="#" rel="nofollow" className="block overflow-hidden">
+    <a href={href} rel="nofollow" className="block overflow-hidden">
       <motion.div
         whileHover={{ y: -20 }}
         transition={{ ease: "backInOut", duration: 0.5 }}
@@ -58,7 +40,7 @@ const NavLink = ({ children }) => {
   );
 };
 
-const JoinButton = () => {
+const JoinButton = ({ setOpen }) => {
   return (
     <button
       className={`
@@ -76,8 +58,9 @@ const JoinButton = () => {
           hover:scale-105 hover:border-neutral-50 hover:text-neutral-900
           hover:before:translate-y-[0%]
           active:scale-100`}
+      onClick={() => setOpen(true)}
     >
-      Refrensi
+      Disclaimer
     </button>
   );
 };

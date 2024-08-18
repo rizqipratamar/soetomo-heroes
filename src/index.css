@@ -4,6 +4,7 @@
 
 html {
   font-family: Lato, system-ui, sans-serif;
+  scroll-behavior: smooth;
 }
 .animate-character-cta-home {
   background-image: linear-gradient(

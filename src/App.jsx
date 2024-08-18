@@ -1,58 +1,63 @@
 /* eslint-disable react/prop-types */
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Navbar } from "./components/nabvar";
-import Books from "./components/books";
-import Story from "./components/story";
 import useSound from "use-sound";
 
 import sound from "./sound/pidato.mp3";
+import Biodata from "./components/biodata";
+import Timeline from "./components/timeline";
+import { Maps } from "./components/maps";
+import { VanishText } from "./components/vanish-text";
+import Footer from "./components/footer";
+import { Disclaimer } from "./components/disclaimer";
+import Books from "./components/books";
 const App = () => {
   const [play, { stop }] = useSound(sound);
+  const [open, setOpen] = useState(false);
   return (
     <>
       <button
         onMouseEnter={() => play()}
         onMouseLeave={() => stop()}
-        className="w-screen"
+        className="w-screen h-screen"
       >
-        <Navbar />
-        <div className="bg-white">
+        <Navbar open={open} setOpen={setOpen} />
+        <div className="">
           <TextParallaxContent
             imgUrl="hero-1.png"
             subheading="Mengenal Lebih Dekat Bung Tomo"
             heading="Api Revolusi Arek Arek Suroboyo!"
+            id="tentang"
           >
-            <div className="px-3">
-              <Story />
-            </div>
+            <Biodata />
           </TextParallaxContent>
+          <Timeline />
           <TextParallaxContent
-            imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            subheading="Quality"
-            heading="Never compromise."
+            imgUrl="https://www.suarasurabaya.net/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-03-at-21.39.28-scaled.jpeg.webp"
+            subheading="Museum"
+            heading="10 Nopember"
+            id="tempat"
           >
-            <ExampleContent />
-          </TextParallaxContent>
-          <TextParallaxContent
-            imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            subheading="Modern"
-            heading="Dress for the best."
-          >
-            <ExampleContent />
+            <Maps />
           </TextParallaxContent>
         </div>
+        <VanishText />
         <Books />
+
+        <Disclaimer open={open} setOpen={setOpen} />
+        <Footer open={open} setOpen={setOpen} />
       </button>
     </>
   );
 };
 
-const IMG_PADDING = 12;
+const IMG_PADDING = 0;
 
-const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
+const TextParallaxContent = ({ imgUrl, subheading, heading, children, id }) => {
   return (
     <div
+      id={id}
       style={{
         paddingLeft: IMG_PADDING,
         paddingRight: IMG_PADDING,
@@ -88,7 +93,7 @@ const StickyImage = ({ imgUrl }) => {
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className="sticky z-0 overflow-hidden "
     >
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"
@@ -119,27 +124,12 @@ const OverlayCopy = ({ subheading, heading }) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
+      <p className="mb-2 font-bold text-center text-xl md:mb-4 md:text-3xl">
         {subheading}
       </p>
       <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
     </motion.div>
   );
 };
-
-const ExampleContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-    <h2 className="col-span-1 text-3xl font-bold md:col-span-4">Bung Tomo</h2>
-    <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-        Bung Tomo menjadi simbol perlawanan dalam Pertempuran Surabaya pada 10
-        November 1945, yang merupakan momen krusial dalam perjuangan Indonesia
-        melawan Belanda. Ia menggunakan orasi dan media untuk menginspirasi
-        rakyat Surabaya melawan penjajah. Setelah perjuangan, ia mengkritik
-        kebijakan Orde Baru dan membela hak-hak buruh serta pedagang kecil.
-      </p>
-    </div>
-  </div>
-);
 
 export default App;
