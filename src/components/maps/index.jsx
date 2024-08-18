@@ -26,26 +26,35 @@ const Features = () => {
 const Copy = () => {
   return (
     <div className="flex h-fit w-full flex-col text-left py-12 md:sticky md:top-0 md:h-screen">
-      <span className="w-fit rounded-full mt-12 px-4 bg-red-500 font-bold py-2 text-sm uppercase text-white">
-        Museum
+      <span className="w-fit rounded-full mt-12 px-4 bg-red-800 font-bold py-2 text-sm uppercase text-white">
+        Museum 10 November
       </span>
-      <h2 className="mb-4 mt-2 text-5xl font-medium leading-tight">
-        10 November
+      <h2 className="mb-4 mt-2 text-2xl font-medium leading-tight">
+        Jendela Perjuangan Arek-Arek Suroboyo
       </h2>
-      <div className="text-lg text-indigo-950">
+      <div className="text-sm text-indigo-950">
         <div>
-          Museum yang berkaitan dengan Bung Tomo di Surabaya adalah Museum 10
-          November. Museum ini terletak di kawasan Tugu Pahlawan, yang menjadi
-          ikon kota Surabaya. Museum ini didirikan untuk mengenang pertempuran
-          heroik rakyat Surabaya melawan tentara sekutu pada 10 November 1945,
-          di mana Bung Tomo menjadi salah satu tokoh penting.
+          Didirikan untuk mengenang dan menghormati para pahlawan yang gugur
+          dalam Pertempuran 10 November 1945, museum ini menjadi saksi bisu
+          perjuangan rakyat Surabaya dalam merebut kemerdekaan Indonesia.
         </div>
-        <div className="mt-8">
-          Di dalam museum ini, terdapat banyak artefak, diorama, dan dokumentasi
-          yang berkaitan dengan perjuangan Bung Tomo dan rakyat Surabaya dalam
-          mempertahankan kemerdekaan Indonesia. Museum ini menjadi tempat yang
-          tepat untuk belajar lebih dalam tentang peristiwa bersejarah yang
-          berhubungan dengan Bung Tomo.
+        <div className="mt-4">
+          Mengunjungi Museum 10 November akan merasakan semangat juang para
+          pahlawan dan lebih menghargai perjuangan mereka dalam merebut
+          kemerdekaan.
+        </div>
+        <div className="mt-4">
+          Selain itu, museum ini juga dilengkapi dengan fasilitas modern seperti
+          audio visual untuk memberikan pengalaman yang lebih interaktif.
+          Beberapa koleksi bersejarah saat mengunjungi Museum 10 November
+          diantaranya: <br /> <br /> - <b>Senjata-senjata</b>: Senjata api,
+          pedang, dan peralatan perang lainnya yang digunakan dalam pertempuran.{" "}
+          <br />- <b>Foto-foto</b>: Dokumentasi berharga tentang peristiwa 10
+          November dan kehidupan para pahlawan. <br />- <b>Diorama</b>: Replika
+          adegan-adegan pertempuran yang menggambarkan situasi saat itu. <br />-{" "}
+          <b>Seragam dan perlengkapan</b>: Pakaian dan perlengkapan yang
+          digunakan oleh para pejuang. <br />- <b>Surat-surat dan dokumen</b>:
+          Koleksi dokumen penting terkait dengan peristiwa 10 November. <br />
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { Navbar } from "./components/nabvar";
 import useSound from "use-sound";
 
 import sound from "./sound/pidato.mp3";
+
 import Biodata from "./components/biodata";
 import Timeline from "./components/timeline";
 import { Maps } from "./components/maps";
@@ -12,42 +13,42 @@ import { VanishText } from "./components/vanish-text";
 import Footer from "./components/footer";
 import { Disclaimer } from "./components/disclaimer";
 import Books from "./components/books";
+import Story from "./components/story";
+import { useEffect } from "react";
 const App = () => {
-  const [play, { stop }] = useSound(sound);
+  const [play] = useSound(sound);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    play();
+  }, [play]);
   return (
     <>
-      <button
-        onMouseEnter={() => play()}
-        onMouseLeave={() => stop()}
-        className="w-screen h-screen"
-      >
-        <Navbar open={open} setOpen={setOpen} />
-        <div className="">
-          <TextParallaxContent
-            imgUrl="hero-1.png"
-            subheading="Mengenal Lebih Dekat Bung Tomo"
-            heading="Api Revolusi Arek Arek Suroboyo!"
-            id="tentang"
-          >
-            <Biodata />
-          </TextParallaxContent>
-          <Timeline />
-          <TextParallaxContent
-            imgUrl="https://www.suarasurabaya.net/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-03-at-21.39.28-scaled.jpeg.webp"
-            subheading="Museum"
-            heading="10 Nopember"
-            id="tempat"
-          >
-            <Maps />
-          </TextParallaxContent>
-        </div>
-        <VanishText />
-        <Books />
-
-        <Disclaimer open={open} setOpen={setOpen} />
-        <Footer open={open} setOpen={setOpen} />
-      </button>
+      <Navbar open={open} setOpen={setOpen} />
+      <div className="">
+        <TextParallaxContent
+          imgUrl="hero-1.png"
+          subheading="Bung Tomo"
+          heading="Api Revolusi Arek Arek Suroboyo!"
+          id="biodata"
+        >
+          <Biodata />
+        </TextParallaxContent>
+        <Story />
+        <Timeline />
+        <TextParallaxContent
+          imgUrl="https://www.suarasurabaya.net/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-03-at-21.39.28-scaled.jpeg.webp"
+          subheading="Museum"
+          heading="10 Nopember"
+          id="tempat"
+        >
+          <Maps />
+        </TextParallaxContent>
+      </div>
+      <VanishText />
+      <Books />
+      <Disclaimer open={open} setOpen={setOpen} />
+      <Footer open={open} setOpen={setOpen} />
     </>
   );
 };
@@ -124,10 +125,10 @@ const OverlayCopy = ({ subheading, heading }) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="mb-2 font-bold text-center text-xl md:mb-4 md:text-3xl">
+      <p className="mb-2 font-bold text-center text-4xl md:mb-4 md:text-7xl">
         {subheading}
       </p>
-      <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+      <p className="text-center text-2xl font-bold md:text-4xl">{heading}</p>
     </motion.div>
   );
 };

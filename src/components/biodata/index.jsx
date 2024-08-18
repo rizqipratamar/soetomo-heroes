@@ -99,9 +99,20 @@ const TiltCard = () => {
           <div className="font-bold">Meninggal</div>
           <div>:</div>
           <div>7 Oktober 1981, Padang Arafah Arab</div>
-          <div className="font-bold">Asal</div>
+          <div className="font-bold">Nama Ayah</div>
           <div>:</div>
-          <div>Surabaya, Jawa Timur</div>
+          <div>Kartawan Tjiptowidjojo</div>
+          <div className="font-bold">Nama Ibu</div>
+          <div>:</div>
+          <div>Subastita</div>
+          <div className="font-bold">Nama Istri</div>
+          <div>:</div>
+          <div>Sulistina</div>
+          <div className="font-bold">Pendidikan</div>
+          <div>:</div>
+          <div>
+            MULO (Meer Uitgebreid Lager Onderwijs) dan HBS (Hogere Burgerschool)
+          </div>
           <div className="font-bold">Pekerjaan</div>
           <div>:</div>
           <div>Jurnalis, Politikus, Pahlawan Nasional</div>
@@ -176,8 +187,8 @@ const PeranPentingCard = () => {
             Pidato Bersejarah
             <br />
             <span className="font-normal">
-              Mengutip bagian-bagian penting dari pidato Bung Tomo yang paling
-              terkenal, yang berhasil menggerakkan massa.
+              Semasa pemerintahan Ir. Soekarno beliau beberapa kali terlihat
+              berpidato.
             </span>
           </div>
 
@@ -185,8 +196,7 @@ const PeranPentingCard = () => {
             Strategi Propaganda
             <br />
             <span className="font-normal">
-              Bagaimana Bung Tomo menggunakan radio sebagai alat propaganda yang
-              efektif.
+              Bung Tomo menggunakan radio sebagai alat propaganda yang efektif.
             </span>
           </div>
 
@@ -194,8 +204,8 @@ const PeranPentingCard = () => {
             Simbol Perjuangan
             <br />
             <span className="font-normal">
-              Menjelaskan mengapa Bung Tomo menjadi simbol perlawanan rakyat
-              Indonesia.
+              Menggerakkan massa melalui orasi dan mnjadi simbol perlawanan
+              rakyat Indonesia.
             </span>
           </div>
         </div>
@@ -259,6 +269,7 @@ const PekerjaanCard = () => {
         <div className="text-left grid grid-cols-1 gap-1 lg:px-4 px-2  pb-10">
           <div className="font-extrabold mt-10 text-xl">Pekerjaan</div>
           <hr />
+
           <div className="font-extrabold">
             12 Agustus 1955 - 24 Maret 1956
             <br />

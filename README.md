@@ -1,5 +1,7 @@
 # Web Dev Merdeka Challenge - Hero Website
 
+DEMO: https://s3-jak01.storageraya.com/sutomo-heroes/index.html
+
 This repository was created for the Web Dev Merdeka Challenge, a competition organized by CloudRaya in celebration of Indonesia's 79th Independence Day. The goal of this project is to build a single-page website that highlights an Indonesian hero. The website also serves as an educational exercise to learn and practice CI/CD automation using StorageRaya, CloudRaya's S3-compatible Object Storage.
 
 ## Project Overview

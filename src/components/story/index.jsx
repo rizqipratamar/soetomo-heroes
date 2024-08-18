@@ -6,7 +6,10 @@ const Story = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section className="bg-white flex w-full justify-center h-screen py-24 px-4 lg:px-8  items-center max-w-4xl mx-auto gap-8 lg:gap-4 overflow-hidden">
+    <section
+      id="biografism"
+      className="bg-white  md:hidden flex w-full justify-center py-24 px-4 lg:px-8 items-center max-w-4xl mx-auto gap-8 lg:gap-4 overflow-hidden"
+    >
       <div className="p-4 mx-auto w-full">
         <h3 className="text-3xl font-semibold">
           {testimonials[selected]?.time}
@@ -37,23 +40,17 @@ const SelectBtns = ({ numTracks, setSelected, selected }) => {
           >
             {selected === n ? (
               <motion.span
-                className="absolute top-0 left-0 bottom-0 bg-slate-950"
-                initial={{
-                  width: "0%",
-                }}
-                animate={{
-                  width: "100%",
-                }}
-                transition={{
-                  duration: 5,
-                }}
+                className="absolute top-0 left-0 bottom-0 bg-red-800"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 5 }}
                 onAnimationComplete={() => {
                   setSelected(selected === numTracks - 1 ? 0 : selected + 1);
                 }}
               />
             ) : (
               <span
-                className="absolute top-0 left-0 bottom-0 bg-slate-950"
+                className="absolute top-0 left-0 bottom-0 bg-red-800"
                 style={{
                   width: selected > n ? "100%" : "0%",
                 }}
@@ -70,51 +67,111 @@ export default Story;
 
 const testimonials = [
   {
-    time: "1920 | Lahir",
-    timeframe:
-      "3 Oktober 1920: Bung Tomo lahir di Surabaya. Ia tumbuh dalam lingkungan keluarga yang memiliki semangat nasionalisme tinggi, yang kemudian membentuknya menjadi seorang pejuang kemerdekaan.",
-  },
-  {
-    time: "1930-an | Pendidikan dan Awal Aktivitas",
+    time: "1920",
     timeframe: (
-      <span>
-        1937: Bung Tomo mulai bekerja di bidang jurnalistik, sebuah langkah awal
-        yang memperkuat keahliannya dalam berkomunikasi dan mempengaruhi publik.{" "}
+      <div>
+        <span className="font-bold">3 Oktober 1920 :</span>
         <br />
-        1938: Bergabung dengan Kepanduan Bangsa Indonesia (KBI), di mana ia
-        mulai terlibat dalam gerakan pemuda nasionalis, memperjuangkan
-        kemerdekaan Indonesia.
-      </span>
+        <span className="text-sm">
+          Lahir di Surabaya dengan nama asli Sutomo. Masa mudanya mulai
+          menunjukkan minat pada dunia pendidikan, aktivitas organisasi pemuda,
+          dan tulis-menulis.
+        </span>
+      </div>
     ),
   },
   {
-    time: "1942 - 1945 |  Masa Pendudukan Jepang",
-    timeframe: `Selama pendudukan Jepang, Bung Tomo aktif dalam organisasi perlawanan dan memainkan peran penting dalam membangkitkan semangat rakyat melalui pidato-pidato yang menggugah.
-Sebagai anggota Barisan Pemberontakan Rakyat Indonesia (BPRI), ia menjadi salah satu figur utama yang menentang penjajahan Jepang dan memperjuangkan kemerdekaan.
-`,
+    time: "1930",
+    timeframe: (
+      <div>
+        <span className="font-bold">Perang Dunia II :</span>
+        <br />
+        <div className="text-sm">
+          Mulai menulis artikel di berbagai media. Semasa muda menjadi jurnalis
+          lepas untuk harian Soeara Oemoem, harian berbahasa Jawa Ekspres,
+          mingguan Pembela Rakyat, dan majalah Poestaka Timoer.
+          <br />
+          Beliau aktif dalam berbagai organisasi pemuda dan pergerakan nasional
+          diantaranya:
+          <br />
+          - Gerakan Rakyat Baru, sebagai anggota <br />
+          - Gerakan Pramuka Garuda, mendapat peringkat kedua di Hindia Belanda.
+          <br />- Pemuda Republik Indonesia, sebagai pengurus organisasi pemuda
+          yang disponsori Jepang
+        </div>
+      </div>
+    ),
   },
   {
-    time: "1945 | Proklamasi Kemerdekaan dan Pertempuran Surabaya",
-    timeframe: `17 Agustus 1945: Bung Tomo dengan penuh semangat menyambut proklamasi kemerdekaan Indonesia, melihatnya sebagai hasil perjuangan yang panjang.
-Oktober - November 1945: Dalam Pertempuran Surabaya, ia menjadi simbol perlawanan rakyat melalui pidatonya di Radio Pemberontakan, yang memotivasi rakyat untuk berjuang mati-matian melawan tentara Sekutu.
-`,
+    time: "1945",
+    timeframe: (
+      <div>
+        <span className="font-bold">Proklamasi Kemerdekaan : </span>
+        <br />
+        <span className="text-sm">
+          18 Agustus 1945 berita proklamasi tersebar hampir seluruh wilayah
+          Surabaya. Dalam &quot;Menembus Kabut Gelap: Bung Tomo Menggugat&quot;
+          diceritakan bahwa Bung Tomo bersama wartawan senior Romo Bintarti
+          memberitakan Proklamasi Kemerdekaan 17 Agustus 1945 dalam tulisan
+          berbahasa Jawa.
+          <br />
+          Tujuannya agar mudah dimengerti warga lokal dan menghindari sensor
+          balatentara Jepang. 12 Oktober 1945 membentuk pasukan laskar pejuang
+          rakyat dan menjadi pemimpin Barisan Pemberontakan Rakyat Indonesia
+          (BPRI).
+          <br />
+          10 November, menjadi tokoh sentral dalam pertempuran dengan
+          pidato-pidatonya yang mengobarkan semangat juang rakyat Surabaya.
+        </span>
+      </div>
+    ),
   },
   {
-    time: "1950-an | Aktivitas Politik",
-    timeframe: `Setelah kemerdekaan, Bung Tomo terjun ke dunia politik dan menjadi anggota DPR, di mana ia terus memperjuangkan hak-hak rakyat dan menjaga semangat revolusi.
-Ia juga bergabung dengan Partai Rakyat Indonesia, membawa idealismenya untuk menciptakan pemerintahan yang adil dan demokratis.`,
+    time: "Pasca 1945",
+    timeframe: (
+      <div>
+        <span className="font-bold">Pasca Kemerdekaan :</span>
+        <br />
+        <span className="text-sm">
+          Pasca kemerdekaan, Bung Tomo terus terlibat dalam berbagai aktivitas
+          politik. Ia tidak hanya berjuang di garis depan medan perang, tetapi
+          juga berkontribusi dalam membangun negara melalui jabatan-jabatan
+          strategis seperti Menteri Penerangan.
+          <br />
+          Dedikasinya yang tinggi terhadap bangsa dan negara terlihat jelas dari
+          berbagai upaya yang ia lakukan untuk memajukan Indonesia.
+        </span>
+      </div>
+    ),
   },
   {
-    time: "1970-an | Kritik terhadap Pemerintah",
-    timeframe: `Bung Tomo menjadi kritikus tajam terhadap pemerintahan Orde Baru, tidak ragu untuk menyuarakan pandangannya tentang kebijakan yang dianggapnya menyimpang dari semangat kemerdekaan.
-Sikapnya yang tegas dan kritis membuatnya dihormati sekaligus kontroversial di mata banyak orang.`,
-  },
-  {
-    time: "1981 | Wafat",
-    timeframe: `7 Oktober 1981: Bung Tomo meninggal dunia saat menunaikan ibadah haji, sebuah akhir yang khidmat bagi seorang pejuang yang dikenal religius. 10 November 1981: Ia dimakamkan di Taman Makam Pahlawan, Surabaya, tepat pada peringatan Hari Pahlawan, sebuah penghormatan terakhir untuk kontribusinya yang besar bagi bangsa.`,
-  },
-  {
-    time: "2008 | Gelar Pahlawan Nasional",
-    timeframe: `2008: Bung Tomo dianugerahi gelar Pahlawan Nasional oleh pemerintah Indonesia, sebuah pengakuan atas peran vitalnya dalam mempertahankan kemerdekaan dan melawan penjajahan.`,
+    time: "1956",
+    timeframe: (
+      <div>
+        <span className="font-bold">Pada tahun 1956:</span>
+        <br />
+        <div className="text-sm">
+          Bung Tomo terpilih sebagai anggota Konstituante mewakili Partai Rakyat
+          Indonesia. Namun, pada tahun 1959 Presiden Sukarno membubarkan
+          Konstituante melalui Dekrit Presiden. Bung Tomo yang menentang keras
+          kebijakan tersebut mulai menarik diri dari panggung politik aktif.
+          <br />
+          Pada awal masa Orde Baru, Bung Tomo sempat mendukung pemerintahan
+          Suharto. Namun, seiring berjalannya waktu, ia mulai kritis terhadap
+          kebijakan-kebijakan yang diterapkan, salah satunya adalah proyek Taman
+          Mini Indonesia Indah.
+          <br />
+          Akibat sikap kritisnya ini, Bung Tomo ditangkap dan dipenjarakan pada
+          tahun 1978 atas tuduhan subversi.
+          <br />
+          Setelah keluar dari penjara, Bung Tomo memilih untuk tidak lagi
+          terlibat dalam politik aktif dan lebih fokus pada kehidupan
+          pribadinya, terutama keluarga dan agama.
+          <br />
+          Bung Tomo meninggal dunia pada tahun 1981 saat menunaikan ibadah haji
+          dan dimakamkan di Surabaya.
+        </div>
+      </div>
+    ),
   },
 ];

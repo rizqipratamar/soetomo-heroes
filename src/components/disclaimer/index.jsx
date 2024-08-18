@@ -20,19 +20,51 @@ export const Disclaimer = ({ open, setOpen }) => {
             Website ini dibuat semata-mata untuk keperluan edukasi sebagai
             bagian dari partisipasi saya dalam Web Dev Merdeka Challenge. Tujuan
             utama saya adalah untuk belajar dan berlatih automasi CI/CD
-            menggunakan bucket di CloudRaya.
+            (deployent) menggunakan object storage / bucket di CloudRaya.
           </p>
-          <p>
+          <div>
             Aset dan gambar yang ditampilkan di website ini diambil dari
-            Gramedia, Kompas, dan Suara Surabaya. Apabila ada pihak yang
-            keberatan dengan penggunaan materi tersebut, mohon untuk melaporkan
-            masalah melalui repository GitHub saya.
-          </p>
+            <a
+              href="https://www.gramedia.com/search?q=bung%20tomo"
+              className="text-blue-500"
+            >
+              {" "}
+              sumber1
+            </a>
+            ,
+            <a
+              href="https://kompaspedia.kompas.id/label/bung-tomo"
+              className="text-blue-500"
+            >
+              {" "}
+              sumber2
+            </a>
+            ,{" "}
+            <a
+              href="https://id.wikipedia.org/wiki/Sutomo"
+              className="text-blue-500"
+            >
+              {" "}
+              sumber3
+            </a>
+            , dan{" "}
+            <a
+              href="https://www.suarasurabaya.net/tag/bung-tomo/"
+              className="text-blue-500"
+            >
+              sumber4
+            </a>
+            . Apabila ada pihak yang keberatan dengan penggunaan materi
+            tersebut, mohon untuk melaporkan masalah melalui repository GitHub
+            saya.
+          </div>
           <p>
             Repository ini terbuka untuk umum dan dapat diakses oleh siapa saja
             yang tertarik. Selain itu, saya juga menyediakan file README.md yang
             berisi panduan cara melakukan deploy website ini ke CloudRaya
-            menggunakan GitHub Actions.
+            menggunakan GitHub Actions. Tujuannya agar ketika push commit ke
+            github update website langsung automatis terdeploy di object storage
+            CloudRaya.
           </p>
 
           <a

@@ -46,7 +46,7 @@ const TestimonialList = ({ list, reverse = false, duration = 50 }) => {
             <img src={t.img} className="w-full h-[360px] object-cover" />
             <div className="bg-white  p-4 text-left">
               <span className="block font-semibold text-lg mb-1">{t.name}</span>
-              <span className="block mb-3 text-sm font-medium">{t.title}</span>
+              <i className="block mb-3 text-md font-medium">{t.title}</i>
               <span className="block text-sm ">{t.info}</span>
             </div>
             <span className="text-7xl absolute top-2 right-2 text-slate-700"></span>
@@ -64,14 +64,14 @@ const testimonials = {
       img: "https://cdn.gramedia.com/uploads/items/9786024074920_Bung-Tomo.jpg",
       name: "Abdul Wahid",
       title: "Hidup dan Mati Pengobar Semangat Tempur 10 November",
-      info: "Ringkasan buku ini menceritakan tentang Bung Tomo, seorang pahlawan nasional Indonesia yang terkenal karena perannya dalam Pertempuran Surabaya pada 10 November 1945. Buku ini mengulas perjalanan hidupnya, mulai dari keterlibatannya dalam gerakan kemerdekaan hingga menjadi pemimpin militer yang menginspirasi rakyat melalui orasi di radio. Selain itu, buku ini juga membahas karier politiknya, termasuk posisinya sebagai Menteri Negara dan anggota Konstituante, serta sikap kritisnya terhadap kebijakan Soekarno dan Suharto. Buku ini menggambarkan Bung Tomo sebagai tokoh yang berpengaruh dalam sejarah perjuangan Indonesia dan perannya dalam mempertahankan kemerdekaan.",
+      info: "Mengulas perjalanan hidupnya, mulai dari keterlibatannya dalam gerakan kemerdekaan hingga menjadi pemimpin militer yang menginspirasi rakyat melalui orasi di radio. Selain itu, buku ini juga membahas karier politiknya, termasuk posisinya sebagai Menteri Negara dan anggota Konstituante, serta sikap kritisnya terhadap kebijakan Soekarno dan Suharto.",
     },
     {
       id: 2,
       img: "https://cdn.gramedia.com/uploads/items/9786024243654_buku-saku-tempo_bung-tomo.jpg",
       name: "Tempo",
       title: "Buku Saku Tempo: Bung Tomo",
-      info: "Sutomo atau Bung Tomo adalah tokoh “pemberontak” termasyhur. Kehadirannya jadi simbol perlawanan dalam pertempuran 10 November 1945. Ia lantas kerap mengkritik Orde Baru, terutama soal korupsi dan penyalahgunaan kekuasaan. Selepas masa perjuangan, Ia masih membela kepentingan buruh dan pedagang kecil yang terancam hak-haknya di pengadilan. Naik haji dengan menggadaikan lukisan, perjalanan hidup Bung Tomo berakhir di Arafah.",
+      info: "Menceritakan Bung Tomo sebagai wartawan Domei yang menjadi simbol perlawanan pada 10 November 1945 dan sering mengkritik Orde Baru. Ia membela hak buruh dan pedagang kecil, serta meninggal di Arafah setelah naik haji. Kisahnya adalah bagian dari seri 'Tokoh Militer' oleh Majalah Tempo yang mengungkap kehidupan perwira militer penting dalam sejarah Indonesia.",
     },
     {
       id: 3,
@@ -79,7 +79,7 @@ const testimonials = {
       name: "Fery Taufiq",
       title:
         "Pekik Takbir Bung Tomo : Perjalanan Hidup, Kisah Cinta & Perjuangan",
-      info: "Pertempuran Surabaya pada 10 November 1945 tidak bisa terlupakan di ingatan masyarakat IndonesIa. Cucuran keringat dan darah bahkan nyawa bersatupadu dengan sumpah 'merdeka atau mati'.Hari itu diperingati sebagai Hari Pahlawan. Dan, Surabaya telah dicatat oleh dunia bahwa orang pribumi memiliki satu nyali 'wani'. Ada oknum yang menggerakkan pasukan wani wati berdiri di tengah-tengah letupan rudal. Salah satunya adalah Bung Tomo. kisah perjuangan Bung Tomo dalam menggerakkan perlawanan terhadap penjajah selalu terkenang di jiwa rakyat Indonesia.",
+      info: "Buku ini mengisahkan Bung Tomo yang membangkitkan semangat rakyat melawan penjajah melalui pidatonya. Dibesarkan dalam keluarga kelas menengah yang menghargai pendidikan, Bung Tomo dikenal sebagai orator ulung. Merinci perjalanan hidup, termasuk perjuangannya, pernikahannya di tengah revolusi, dan kemampuan orasinya dalam memperjuangkan kemerdekaan Indonesia.",
     },
   ],
 };
