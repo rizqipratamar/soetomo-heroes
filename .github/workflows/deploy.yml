@@ -33,4 +33,4 @@ jobs:
             acl "public-read"
 
       - name: Deploy to StorageRaya
-        run: rclone sync dist/ storageraya:teseheroes --progress
+        run: rclone sync dist/ storageraya:sutomo-heroes --progress
