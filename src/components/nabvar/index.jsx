@@ -7,13 +7,13 @@ export const Navbar = ({ open, setOpen }) => {
 
 const SimpleFloatingNav = ({ open, setOpen }) => {
   return (
-    <nav className=" z-50 top-0 flex w-full justify-between px-10 fixed items-center gap-6   opacity-80  border-neutral-100 bg-red-800 p-2 text-sm text-white">
+    <nav className=" z-50 top-0 flex w-full justify-between md:px-10 fixed items-center gap-6   opacity-80  border-neutral-100 bg-red-800 p-2 text-sm text-white">
       <div className="text-xl hidden md:flex">
         Mengenal Lebih Dekat{" "}
         <span className="font-extrabold ml-1"> Bung Tomo</span>
       </div>
 
-      <div className="flex items-center gap-6 text-white">
+      <div className="flex items-center md:gap-6 gap-2 text-white mx-auto md:mx-0">
         <NavLink href="#biodata">Biodata</NavLink>
         <NavLink href="#biografimd" className="hidden md:block">
           Biografi
