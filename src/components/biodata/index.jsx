@@ -77,6 +77,7 @@ const TiltCard = () => {
         className="absolute inset-2 grid  rounded-xl bg-white shadow-lg pb-52"
       >
         <img
+          loading="lazy"
           src="sutomo-1.png"
           alt="biodata-1"
           className="mx-auto rounded-md absolute top-[-12%] left-0 right-0"

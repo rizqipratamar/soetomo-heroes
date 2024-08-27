@@ -34,6 +34,8 @@ const SelectBtns = ({ numTracks, setSelected, selected }) => {
       {Array.from(Array(numTracks).keys()).map((n) => {
         return (
           <button
+            id="biografi-btn"
+            aria-label="biografi-btn"
             key={n}
             onClick={() => setSelected(n)}
             className="h-1.5 w-full bg-slate-300 relative"

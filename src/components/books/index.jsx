@@ -44,6 +44,7 @@ const TestimonialList = ({ list, reverse = false, duration = 50 }) => {
             className="shrink-0 w-[800px] shadow-sm shadow-white grid grid-cols-[16rem,_1fr] rounded-lg overflow-hidden relative"
           >
             <img
+              loading="lazy"
               src={t.img}
               className="w-full h-[360px] object-cover"
               alt={`books-${t.name}`}
