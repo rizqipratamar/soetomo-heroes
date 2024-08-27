@@ -43,7 +43,11 @@ const TestimonialList = ({ list, reverse = false, duration = 50 }) => {
             key={t.id}
             className="shrink-0 w-[800px] shadow-sm shadow-white grid grid-cols-[16rem,_1fr] rounded-lg overflow-hidden relative"
           >
-            <img src={t.img} className="w-full h-[360px] object-cover" />
+            <img
+              src={t.img}
+              className="w-full h-[360px] object-cover"
+              alt={`books-${t.name}`}
+            />
             <div className="bg-white  p-4 text-left">
               <span className="block font-semibold text-lg mb-1">{t.name}</span>
               <i className="block mb-3 text-md font-medium">{t.title}</i>

@@ -78,7 +78,7 @@ const TiltCard = () => {
       >
         <img
           src="sutomo-1.png"
-          alt=""
+          alt="biodata-1"
           className="mx-auto rounded-md absolute top-[-12%] left-0 right-0"
         />
 

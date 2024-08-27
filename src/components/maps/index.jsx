@@ -79,6 +79,7 @@ const Carousel = () => {
           numItems={5}
           content={
             <img
+              alt="museum-10-november"
               className="w-full h-full rounded-xl"
               src="https://asset.kompas.com/crops/xvrNh5VPIWgmEOr2rybwci3kwtU=/0x0:986x657/750x500/data/photo/2020/01/13/5e1bed0edcc32.jpg"
             />
@@ -90,6 +91,7 @@ const Carousel = () => {
           numItems={5}
           content={
             <img
+              alt="museum-10-november"
               className="w-full h-full rounded-xl"
               src="https://asset.kompas.com/crops/RX4Q_OUvHYZzXLnZBGOY5P-dZLo=/0x1028:3980x3681/750x500/data/photo/2022/11/08/6369c67e5d7f4.jpg"
             />
@@ -101,6 +103,7 @@ const Carousel = () => {
           numItems={5}
           content={
             <img
+              alt="museum-10-november"
               className="w-full h-full rounded-xl"
               src="https://sewabussurabaya.com/wp-content/uploads/2020/02/Belajar-Sejarah-dari-Para-Pahlawan-di-Museum-Sepuluh-November.jpg"
             />
@@ -112,6 +115,7 @@ const Carousel = () => {
           numItems={5}
           content={
             <img
+              alt="museum-10-november"
               className="w-full h-full rounded-xl"
               src="https://direktori.vokasi.unair.ac.id/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-15-at-16.58.04-1024x576.jpeg"
             />
@@ -124,6 +128,7 @@ const Carousel = () => {
           content={
             <div className="relative w-full h-0 pb-[56.25%]">
               <iframe
+                title="museum-10-november"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.958572578533!2d112.73528777499958!3d-7.245554992760872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f93fc001bc5d%3A0x110e38d8a6c23fbe!2sMonumen%20Tugu%20Pahlawan%20dan%20Museum%20Sepuluh%20Nopember%20Surabaya!5e0!3m2!1sen!2sid!4v1723482800951!5m2!1sen!2sid"
                 allowFullScreen
                 loading="lazy"
